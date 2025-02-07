@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Incorrectly using innerHTML to set content on an element that does not exist yet. 
+    document.getElementById('myDiv').innerHTML = "This text will replace the existing content."; 
+    //This line will throw an error if the element with id "myDiv" is not found in the DOM.
+     document.getElementById('nonExistentElement').innerHTML = 'This will cause an error';
+  </script>
+</body>
+</html>
