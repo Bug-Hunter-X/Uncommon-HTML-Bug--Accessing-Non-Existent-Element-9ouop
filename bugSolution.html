@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+  <script>
+    // Check if the element exists before manipulating its innerHTML.
+    const myDiv = document.getElementById('myDiv');
+    if (myDiv) {
+      myDiv.innerHTML = "This text will replace the existing content.";
+    } else {
+      console.error('Element with id "myDiv" not found.');
+    }
+    //Adding a new element if non existent
+    const newElement = document.createElement('div');
+    newElement.id = 'myNewElement';
+    newElement.innerHTML = 'This element is dynamically added.';
+    document.body.appendChild(newElement);
+  </script>
+</body>
+</html>
